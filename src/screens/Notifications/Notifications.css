@@ -1,0 +1,362 @@
+* {
+  box-sizing: border-box;
+}
+
+.notifications-screen {
+  min-height: 100vh;
+
+  background: #0b1220;
+
+  color: white;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.notifications-header {
+  height: 100px;
+
+  padding: 0 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #111a2b;
+
+  border-bottom: 1px solid #263247;
+}
+
+.notifications-header h1 {
+  margin: 0;
+
+  font-size: 30px;
+
+  font-weight: 500;
+}
+
+.notifications-header p {
+  margin: 7px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+.notifications-status {
+  display: flex;
+
+  gap: 25px;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   MAIN
+   ========================= */
+
+.notifications-content {
+  flex: 1;
+
+  width: 100%;
+
+  max-width: 1050px;
+
+  margin: auto;
+
+  padding: 30px 45px;
+}
+
+
+/* =========================
+   SUMMARY
+   ========================= */
+
+.notifications-summary {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.notifications-summary h2 {
+  margin: 0;
+
+  font-size: 19px;
+
+  font-weight: 500;
+}
+
+.notifications-summary p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.mark-read {
+  height: 38px;
+
+  padding: 0 15px;
+
+  border-radius: 9px;
+
+  border: 1px solid #334155;
+
+  background: #182337;
+
+  color: #cbd5e1;
+
+  cursor: pointer;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   NOTIFICATION LIST
+   ========================= */
+
+.notification-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.notification-card {
+  min-height: 85px;
+
+  padding: 14px 18px;
+
+  border-radius: 14px;
+
+  border: 1px solid #263247;
+
+  background: #151f31;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  position: relative;
+}
+
+.notification-card.unread {
+  background: #182337;
+
+  border-color: #334155;
+}
+
+
+/* =========================
+   ICON
+   ========================= */
+
+.notification-icon {
+  width: 48px;
+
+  height: 48px;
+
+  border-radius: 12px;
+
+  background: #1b2638;
+
+  border: 1px solid #334155;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 21px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   INFORMATION
+   ========================= */
+
+.notification-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.notification-title {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.notification-title h3 {
+  margin: 0;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+.notification-title span {
+  color: #64748b;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+}
+
+.notification-info p {
+  margin: 6px 0;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+.notification-info small {
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+
+/* =========================
+   UNREAD DOT
+   ========================= */
+
+.unread-dot {
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #cbd5e1;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   BOTTOM INFORMATION
+   ========================= */
+
+.notification-footer-info {
+  margin-top: 18px;
+
+  min-height: 45px;
+
+  padding: 10px 15px;
+
+  border-radius: 10px;
+
+  border: 1px solid #263247;
+
+  background: #111a2b;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.notification-footer-info span {
+  font-size: 10px;
+
+  color: #94a3b8;
+}
+
+.notification-footer-info p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.notifications-footer {
+  height: 80px;
+
+  padding: 0 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  background: #111a2b;
+
+  border-top: 1px solid #263247;
+}
+
+.notifications-back {
+  height: 45px;
+
+  padding: 0 22px;
+
+  border-radius: 10px;
+
+  border: 1px solid #334155;
+
+  background: #182337;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.assistant-bar-small {
+  flex: 1;
+
+  height: 48px;
+
+  border-radius: 25px;
+
+  background: #1b2638;
+
+  color: #94a3b8;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 20px;
+}

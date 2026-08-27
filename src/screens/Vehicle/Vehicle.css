@@ -1,0 +1,512 @@
+* {
+  box-sizing: border-box;
+}
+
+.vehicle-screen {
+  min-height: 100vh;
+
+  background: #0b1220;
+
+  color: white;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.vehicle-header {
+  height: 100px;
+
+  padding: 0 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #111a2b;
+
+  border-bottom: 1px solid #263247;
+}
+
+.vehicle-header h1 {
+  margin: 0;
+
+  font-size: 30px;
+
+  font-weight: 500;
+}
+
+.vehicle-header p {
+  margin: 7px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+.vehicle-status {
+  display: flex;
+
+  gap: 25px;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   MAIN
+   ========================= */
+
+.vehicle-content {
+  flex: 1;
+
+  width: 100%;
+
+  max-width: 1150px;
+
+  margin: auto;
+
+  padding: 30px 45px;
+
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.5fr;
+
+  grid-template-rows: auto auto;
+
+  gap: 22px;
+}
+
+
+/* =========================
+   VEHICLE OVERVIEW
+   ========================= */
+
+.vehicle-overview {
+  min-height: 330px;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  border: 1px solid #263247;
+
+  background: #151f31;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.vehicle-image {
+  width: 120px;
+
+  height: 80px;
+
+  border-radius: 50%;
+
+  background: #1b2638;
+
+  border: 1px solid #475569;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 48px;
+
+  margin-bottom: 18px;
+}
+
+.vehicle-overview h2 {
+  margin: 0;
+
+  font-size: 20px;
+
+  font-weight: 500;
+}
+
+.vehicle-state {
+  margin: 7px 0 20px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+}
+
+.vehicle-stats {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 8px;
+}
+
+.vehicle-stats div {
+  padding: 12px 5px;
+
+  border-radius: 10px;
+
+  background: #111a2b;
+
+  border: 1px solid #263247;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.vehicle-stats strong {
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+.vehicle-stats small {
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+
+/* =========================
+   CONTROLS
+   ========================= */
+
+.vehicle-controls {
+  min-height: 330px;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  border: 1px solid #263247;
+
+  background: #151f31;
+}
+
+.vehicle-section-title h2 {
+  margin: 0;
+
+  font-size: 19px;
+
+  font-weight: 500;
+}
+
+.vehicle-section-title p {
+  margin: 5px 0 18px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.control-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.vehicle-control {
+  min-height: 82px;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  border: 1px solid #334155;
+
+  background: #182337;
+
+  color: #cbd5e1;
+
+  cursor: pointer;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+}
+
+.vehicle-control span {
+  font-size: 21px;
+}
+
+.vehicle-control strong {
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+.vehicle-control small {
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+.active-control {
+  border-color: #475569;
+
+  background: #1d293d;
+}
+
+
+/* =========================
+   DRIVING MODE
+   ========================= */
+
+.driving-mode {
+  margin-top: 15px;
+
+  padding-top: 15px;
+
+  border-top: 1px solid #263247;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.driving-mode h3 {
+  margin: 0;
+
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+.driving-mode p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+.mode-options {
+  display: flex;
+
+  gap: 7px;
+}
+
+.mode {
+  min-width: 90px;
+
+  padding: 8px;
+
+  border-radius: 9px;
+
+  border: 1px solid #334155;
+
+  background: #182337;
+
+  color: #cbd5e1;
+
+  cursor: pointer;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.mode strong {
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+.mode small {
+  color: #64748b;
+
+  font-size: 8px;
+}
+
+.active-mode {
+  border-color: #64748b;
+
+  background: #1d293d;
+}
+
+
+/* =========================
+   VEHICLE HEALTH
+   ========================= */
+
+.vehicle-health {
+  grid-column: 1 / 3;
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  border: 1px solid #263247;
+
+  background: #111a2b;
+}
+
+.health-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+.health-heading h2 {
+  margin: 0;
+
+  font-size: 17px;
+
+  font-weight: 500;
+}
+
+.health-heading span {
+  color: #94a3b8;
+
+  font-size: 10px;
+}
+
+.health-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+}
+
+.health-card {
+  min-height: 60px;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  background: #182337;
+
+  border: 1px solid #263247;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.health-card > span {
+  font-size: 18px;
+}
+
+.health-card div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.health-card strong {
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+.health-card small {
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.vehicle-footer {
+  height: 80px;
+
+  padding: 0 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  background: #111a2b;
+
+  border-top: 1px solid #263247;
+}
+
+.vehicle-back {
+  height: 45px;
+
+  padding: 0 22px;
+
+  border-radius: 10px;
+
+  border: 1px solid #334155;
+
+  background: #182337;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.assistant-bar-small {
+  flex: 1;
+
+  height: 48px;
+
+  border-radius: 25px;
+
+  background: #1b2638;
+
+  color: #94a3b8;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 20px;
+}

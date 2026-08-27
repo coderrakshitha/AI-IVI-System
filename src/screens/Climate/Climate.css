@@ -1,0 +1,453 @@
+* {
+  box-sizing: border-box;
+}
+
+.climate-screen {
+  min-height: 100vh;
+
+  background: #0b1220;
+
+  color: white;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.climate-header {
+  height: 100px;
+
+  padding: 0 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #111a2b;
+
+  border-bottom: 1px solid #263247;
+}
+
+.climate-header h1 {
+  margin: 0;
+
+  font-size: 30px;
+
+  font-weight: 500;
+}
+
+.climate-header p {
+  margin: 7px 0 0;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+.climate-status {
+  display: flex;
+
+  gap: 25px;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   MAIN
+   ========================= */
+
+.climate-content {
+  flex: 1;
+
+  width: 100%;
+
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding: 35px 45px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1.3fr 1fr;
+
+  grid-template-rows: 1fr auto;
+
+  gap: 25px;
+}
+
+
+/* =========================
+   TEMPERATURE ZONES
+   ========================= */
+
+.temperature-zone {
+  min-height: 250px;
+
+  border-radius: 20px;
+
+  border: 1px solid #263247;
+
+  background: #151f31;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.zone-label {
+  margin: 0 0 20px;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+}
+
+.temperature-display {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+}
+
+.temperature-display > div {
+  min-width: 120px;
+
+  text-align: center;
+}
+
+.temperature-display strong {
+  font-size: 65px;
+
+  font-weight: 300;
+}
+
+.temperature-display span {
+  color: #94a3b8;
+
+  font-size: 20px;
+}
+
+.temperature-display button {
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 50%;
+
+  border: 1px solid #475569;
+
+  background: #1b2638;
+
+  color: white;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+.comfort-text {
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  margin-top: 15px;
+}
+
+
+/* =========================
+   CENTER FAN
+   ========================= */
+
+.climate-center {
+  border-radius: 20px;
+
+  border: 1px solid #263247;
+
+  background: #111a2b;
+
+  padding: 25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.fan-display {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.fan-icon {
+  font-size: 30px;
+}
+
+.fan-display strong {
+  font-size: 35px;
+
+  font-weight: 400;
+}
+
+.fan-label {
+  color: #64748b;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+}
+
+.fan-controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 18px;
+}
+
+.fan-controls button {
+  width: 35px;
+
+  height: 35px;
+
+  border-radius: 50%;
+
+  border: 1px solid #475569;
+
+  background: #182337;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.fan-bars {
+  display: flex;
+
+  gap: 5px;
+
+  align-items: end;
+
+  height: 25px;
+}
+
+.fan-bars span {
+  width: 9px;
+
+  height: 8px;
+
+  border-radius: 3px;
+
+  background: #334155;
+}
+
+.fan-bars span:nth-child(2) {
+  height: 13px;
+}
+
+.fan-bars span:nth-child(3) {
+  height: 18px;
+}
+
+.fan-bars .active {
+  background: #cbd5e1;
+}
+
+
+/* =========================
+   AIR DIRECTION
+   ========================= */
+
+.air-direction {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.direction {
+  width: 75px;
+
+  height: 65px;
+
+  border-radius: 12px;
+
+  border: 1px solid #334155;
+
+  background: #182337;
+
+  color: #cbd5e1;
+
+  cursor: pointer;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 20px;
+}
+
+.direction small {
+  margin-top: 5px;
+
+  font-size: 9px;
+
+  color: #64748b;
+}
+
+.active-direction {
+  border-color: #64748b;
+
+  background: #1d293d;
+}
+
+
+/* =========================
+   BOTTOM OPTIONS
+   ========================= */
+
+.climate-options {
+  grid-column: 1 / 4;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, 1fr);
+
+  gap: 12px;
+}
+
+.climate-option {
+  min-height: 100px;
+
+  border-radius: 15px;
+
+  border: 1px solid #263247;
+
+  background: #151f31;
+
+  color: #cbd5e1;
+
+  cursor: pointer;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+}
+
+.climate-option span {
+  font-size: 22px;
+}
+
+.climate-option strong {
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+.climate-option small {
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+.active-option {
+  border-color: #475569;
+
+  background: #1b2638;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.climate-footer {
+  height: 80px;
+
+  padding: 0 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  background: #111a2b;
+
+  border-top: 1px solid #263247;
+}
+
+.climate-back {
+  height: 45px;
+
+  padding: 0 22px;
+
+  border-radius: 10px;
+
+  border: 1px solid #334155;
+
+  background: #182337;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.assistant-bar-small {
+  flex: 1;
+
+  height: 48px;
+
+  border-radius: 25px;
+
+  background: #1b2638;
+
+  color: #94a3b8;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 20px;
+}
