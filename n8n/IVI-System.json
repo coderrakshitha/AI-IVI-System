@@ -1,0 +1,155 @@
+{
+  "name": "IVI-System",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "options": {
+          "systemMessage": "You are an AI assistant for an In-Vehicle Infotainment (IVI) system.\n\nYour job is to understand the user's natural language command and determine which IVI screen they want to open.\n\nAvailable screens:\n\n- allapps\n- bluetooth\n- climate\n- home\n- media\n- music\n- navigation\n- notifications\n- phone\n- profile\n- radio\n- settings\n- systeminfo\n- vehicle\n\nRespond ONLY with valid JSON in exactly this format:\n\n{\"screen\":\"screen_name\"}\n\nRules:\n- Select only one screen from the available screens.\n- Do not provide explanations.\n- Do not provide reasoning.\n- Do not add markdown.\n- Do not add any extra text.\n- Return only the JSON object.\n\nExamples:\n\nUser: Show me all applications\nOutput: {\"screen\":\"allapps\"}\n\nUser: Connect my Bluetooth device\nOutput: {\"screen\":\"bluetooth\"}\n\nUser: I am feeling hot\nOutput: {\"screen\":\"climate\"}\n\nUser: Go to the main screen\nOutput: {\"screen\":\"home\"}\n\nUser: Open my media\nOutput: {\"screen\":\"media\"}\n\nUser: I want to listen to music\nOutput: {\"screen\":\"music\"}\n\nUser: Show me the map\nOutput: {\"screen\":\"navigation\"}\n\nUser: Show my notifications\nOutput: {\"screen\":\"notifications\"}\n\nUser: Open my phone\nOutput: {\"screen\":\"phone\"}\n\nUser: Show my profile\nOutput: {\"screen\":\"profile\"}\n\nUser: Play FM radio\nOutput: {\"screen\":\"radio\"}\n\nUser: Open settings\nOutput: {\"screen\":\"settings\"}\n\nUser: Show system information\nOutput: {\"screen\":\"systeminfo\"}\n\nUser: Show vehicle information\nOutput: {\"screen\":\"vehicle\"}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        256,
+        0
+      ],
+      "id": "910a1f8a-d07d-4d90-aacb-97b51af03c99",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "openrouter/free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        256,
+        208
+      ],
+      "id": "9dca959a-1d1e-468e-9315-090259e1b854",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "4eD8tKfUcsSWisBP",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "1cedf394-3973-4b85-99c7-b672771b34a0",
+      "name": "Telegram Trigger",
+      "webhookId": "0b75e94b-06ac-46dc-ab35-fed584168d44",
+      "credentials": {
+        "telegramApi": {
+          "id": "krj3qD5SAUg4vBd0",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const result = JSON.parse($json.output);\n\nreturn {\n  screen: result.screen\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        608,
+        0
+      ],
+      "id": "80cc6369-91fd-4f04-a0c8-bc57752a2b72",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:3000/ivi-screen",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"screen\": \"{{ $json.screen }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        832,
+        0
+      ],
+      "id": "83e75e47-5e41-4ff8-a196-2e5fde23f5eb",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "0467be9d-eb53-4a07-bba4-2b15ca8e4434",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "116a79a94aa8038b8aa6b50deea04ecf08347182d41d5cde4cb979cb5ac2907f"
+  },
+  "id": "1BxrpmXJoWzAceK5",
+  "tags": []
+}
