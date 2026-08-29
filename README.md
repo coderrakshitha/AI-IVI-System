@@ -100,6 +100,60 @@ Requested IVI Screen
 
 
 
+\## Screenshots
+
+
+
+\### Home Screen
+
+
+
+!\[Home Screen](screenshots/Home-Screen.png)
+
+
+
+\### All Apps Screen
+
+
+
+!\[All Apps Screen](screenshots/Allapps-screen.png)
+
+
+
+\### Music Screen
+
+
+
+!\[Music Screen](screenshots/Music-screen.png)
+
+
+
+\### Climate Screen
+
+
+
+!\[Climate Screen](screenshots/Climate-screen.png)
+
+
+
+\### n8n Workflow
+
+
+
+!\[n8n Workflow](screenshots/N8N.png)
+
+
+
+\### Node.js Server
+
+
+
+!\[Node.js Server](screenshots/Node.js-Server.png)
+
+
+
+
+
 \## IVI Screens
 
 
@@ -837,6 +891,4 @@ Instead of manually navigating through multiple IVI menus, users can provide a n
 
 
 AI-IVI-System Project
-
-
 

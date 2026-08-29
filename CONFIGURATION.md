@@ -1,4 +1,4 @@
-\# AI-IVI-System Configuration Guide
+# AI-IVI-System Configuration Guide
 
 
 
@@ -6,7 +6,7 @@ This document contains the configuration required to run the AI-IVI-System on an
 
 
 
-\## 1. React Configuration
+## 1. React Configuration
 
 
 
@@ -36,7 +36,7 @@ Start the React application from the project root:
 
 
 
-\## 2. Node.js Configuration
+## 2. Node.js Configuration
 
 
 
@@ -78,7 +78,7 @@ The server runs on:
 
 
 
-\## 3. n8n Configuration
+## 3. n8n Configuration
 
 
 
@@ -110,7 +110,7 @@ The local n8n instance used by the project runs on:
 
 
 
-\## 4. Telegram Configuration
+## 4. Telegram Configuration
 
 
 
@@ -150,7 +150,7 @@ Each user should create and use their own Telegram Bot.
 
 
 
-\## 5. OpenRouter Configuration
+## 5. OpenRouter Configuration
 
 
 
@@ -188,7 +188,7 @@ Each user should use their own API key.
 
 
 
-\## 6. Cloudflare Tunnel Configuration
+## 6. Cloudflare Tunnel Configuration
 
 
 
@@ -232,7 +232,7 @@ The URL may change when the Cloudflare Quick Tunnel is restarted.
 
 
 
-\## 7. n8n to Node.js Configuration
+## 7. n8n to Node.js Configuration
 
 
 
@@ -260,7 +260,7 @@ Do not change this to localhost when n8n is running inside Docker.
 
 
 
-\## 8. Required Services
+## 8. Required Services
 
 
 
@@ -268,7 +268,7 @@ The following services must be running:
 
 
 
-\### React
+### React
 
 
 
@@ -276,7 +276,7 @@ The following services must be running:
 
 
 
-\### Node.js
+### Node.js
 
 
 
@@ -284,7 +284,7 @@ The following services must be running:
 
 
 
-\### n8n
+### n8n
 
 
 
@@ -292,7 +292,7 @@ The following services must be running:
 
 
 
-\### Cloudflare Tunnel
+### Cloudflare Tunnel
 
 
 
@@ -304,7 +304,7 @@ The following services must be running:
 
 
 
-\## 9. Startup Order
+## 9. Startup Order
 
 
 
@@ -312,7 +312,7 @@ For a fresh setup, the recommended order is:
 
 
 
-\### Step 1
+### Step 1
 
 
 
@@ -320,7 +320,7 @@ Start Docker Desktop.
 
 
 
-\### Step 2
+### Step 2
 
 
 
@@ -328,7 +328,7 @@ Start the n8n container.
 
 
 
-\### Step 3
+### Step 3
 
 
 
@@ -340,7 +340,7 @@ Open n8n:
 
 
 
-\### Step 4
+### Step 4
 
 
 
@@ -352,7 +352,7 @@ Import:
 
 
 
-\### Step 5
+### Step 5
 
 
 
@@ -360,7 +360,7 @@ Configure Telegram credentials.
 
 
 
-\### Step 6
+### Step 6
 
 
 
@@ -368,7 +368,7 @@ Configure OpenRouter credentials.
 
 
 
-\### Step 7
+### Step 7
 
 
 
@@ -384,7 +384,7 @@ Start the Node.js server:
 
 
 
-\### Step 8
+### Step 8
 
 
 
@@ -398,7 +398,7 @@ Start React in another terminal:
 
 
 
-\### Step 9
+### Step 9
 
 
 
@@ -410,7 +410,7 @@ Start Cloudflare Tunnel:
 
 
 
-\### Step 10
+### Step 10
 
 
 
@@ -418,7 +418,7 @@ Configure the generated HTTPS URL for the Telegram webhook.
 
 
 
-\### Step 11
+### Step 11
 
 
 
@@ -426,7 +426,7 @@ Activate the n8n workflow.
 
 
 
-\### Step 12
+### Step 12
 
 
 
@@ -450,7 +450,7 @@ The React application should open the Music screen.
 
 
 
-\## 10. Security
+## 10. Security
 
 
 
@@ -478,7 +478,7 @@ Each user must configure their own credentials.
 
 
 
-\## 11. Important Note for New Users
+## 11. Important Note for New Users
 
 
 
@@ -511,4 +511,5 @@ The application ports should remain:
 
 
 unless the user intentionally changes the configuration.
+
 
